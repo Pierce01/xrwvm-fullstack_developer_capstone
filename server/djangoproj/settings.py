@@ -29,13 +29,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'https://pharriz-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai',
-    'https://pharriz-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai'
+    'https://pharriz-8000.theiadockernext-1-labs-prod' +
+    '-theiak8s-4-tor01.proxy.cognitiveclass.ai',
+    'https://pharriz-8000.theianext-1-labs-prod' +
+    '-misc-tools-us-east-0.proxy.cognitiveclass.ai'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://pharriz-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai',
-    'https://pharriz-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+    'https://pharriz-8000.theianext-1-labs-prod' +
+    '-misc-tools-us-east-0.proxy.cognitiveclass.ai',
+    'https://pharriz-8000.theiadockernext-1-labs-prod' +
+    '-theiak8s-4-tor01.proxy.cognitiveclass.ai'
 ]
 
 REST_FRAMEWORK = {
@@ -85,10 +89,7 @@ TEMPLATES = [
     },
 ]
 
-
-
 WSGI_APPLICATION = 'djangoproj.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -103,7 +104,8 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'django.contrib.auth.password_validation.'+ 
+        'UserAttributeSimilarityValidator',
     },
     {
         'NAME':
@@ -119,7 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -132,7 +133,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -148,8 +148,7 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'frontend/static'),
+    os.path.join(BASE_DIR, 'frontend/static'),
     os.path.join(BASE_DIR, 'frontend/build'),
     os.path.join(BASE_DIR, 'frontend/build/static'),
 ]
-
